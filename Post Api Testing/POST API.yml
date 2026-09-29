@@ -1,0 +1,59 @@
+info:
+  name: POST API
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://sapz-appsrv.laderatechnology.com:44300/sap/opu/odata/sap/ZSB_EINA/EINA
+  headers:
+    - name: X-CSRF-TOKEN
+      value: "\teK7cdXROzkmSEKSvIw-Ypw=="
+  body:
+    type: json
+    data: |-
+      {
+          "copyPurchaseInfo_ac": true,
+          "Edit_ac": true,
+          "SendEmaill_ac": true,
+          "setStatuss_ac": true,
+          "Matkl_fc": 3,
+          "Delete_mc": true,
+          "Update_mc": true,
+          "to_eine_oc": true,
+          "Infnr": "  1000005",
+          "Matnr": "10001",
+          "Matkl": "02",
+          "Lifnr": "10001",
+          "Status": true,
+          "Deliverystatus": 3,
+          "Ernam": "TECH_54",
+          "Erdat": "/Date(1767792168771+0000)/",
+          "Meins": "ONE",
+          "Telf1": "9743904098",
+          "Urzla": "NZ",
+          "Mfrnr": "ENGINE",
+          "Imagee": "",
+          "LastChangedAt": "/Date(1767792184851+0000)/",
+          "ishide": false,
+          "HasDraftEntity": false,
+          "DraftEntityCreationDateTime": null,
+          "DraftEntityLastChangeDateTime": null,
+          "HasActiveEntity": false,
+          "IsActiveEntity": true
+      }
+  auth: inherit
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "201"
+      description: "Resource Created "
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

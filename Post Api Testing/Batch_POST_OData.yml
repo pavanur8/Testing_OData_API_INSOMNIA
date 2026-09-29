@@ -1,0 +1,46 @@
+info:
+  name: Batch_POST_OData
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: https://sapz-appsrv.laderatechnology.com:44300/sap/opu/odata/SAP/ZODATA_BATCH_641_SRV/BATCHSet
+  headers:
+    - name: X-CSRF-TOKEN
+      value: AyIShasjuSNvEyFZPV72sg==
+  body:
+    type: json
+    data: |-
+      {
+        "d" : {
+          "__metadata" : {
+            "id" : "http://sapz-appsrv.laderatechnology.com:8000/sap/opu/odata/SAP/ZODATA_BATCH_641_SRV/BATCHSet('101')",
+            "uri" : "http://sapz-appsrv.laderatechnology.com:8000/sap/opu/odata/SAP/ZODATA_BATCH_641_SRV/BATCHSet('101')",
+            "type" : "ZODATA_BATCH_641_SRV.BATCH"
+          },
+          "Userid" : "103",
+          "Name" : "Rohit Sharama",
+          "Age" : "36",
+          "Email" : "rohit45@gmail.com",
+          "Country" : "Mumbai"
+        }
+      }
+  auth:
+    type: basic
+    username: TECH_54
+    password: VinoPav@88
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "201"
+      description: "Sucessfully Created "
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

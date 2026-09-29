@@ -1,0 +1,25 @@
+info:
+  name: Get Users
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://chatgpt.com/backend-api/conversations
+  headers:
+    - name: X-CSRF-TOKEN
+      value: fetch
+      description: csrf
+  auth:
+    type: basic
+    username: tech_54
+    password: VinoPav@88
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+docs: This request retrieves a list of users from the JSONPlaceholder API.
